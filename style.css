@@ -1,0 +1,185 @@
+/* 🌑 Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #0a0f1e;
+    color: white;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    line-height: 1.6;
+}
+
+/* 🔝 Navbar */
+nav {
+    background: linear-gradient(90deg, #1e3a8a, #9333ea);
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}
+
+nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #facc15;
+}
+
+/* 🌈 Sections with Different Background Colors */
+section:nth-child(odd) {
+    background: #1e293b;
+}
+
+section:nth-child(even) {
+    background: #111827;
+}
+
+section {
+    padding: 80px 20px;
+    text-align: center;
+    margin-top: 60px;
+    transition: background 0.3s ease-in-out;
+}
+
+/* 🏆 Leaderboard Animation */
+.score-update {
+    animation: pop 0.5s ease-in-out;
+    color: #facc15;
+    font-weight: bold;
+}
+
+@keyframes pop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* 🚀 Animations for Live Updates */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 🖼️ Cards & Containers */
+.bg-gray-800 {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+.bg-gray-800:hover {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* 🎨 Buttons */
+button {
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    background-color: #3b82f6;
+    color: white;
+}
+
+button:hover {
+    opacity: 0.9;
+    background-color: #2563eb;
+}
+
+/* 📄 Profile Section */
+#profile {
+    padding: 100px 20px;
+}
+
+#profile img {
+    border: 5px solid white;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+}
+
+#profile img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
+}
+
+/* 🔥 Modal Styling */
+.modal {
+    display: flex;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #1e293b;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.2);
+    z-index: 2000;
+    opacity: 0;
+    animation: fadeInModal 0.3s ease-out forwards;
+}
+
+@keyframes fadeInModal {
+    to {
+        opacity: 1;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+/* 📱 Responsive Styles */
+@media (max-width: 1024px) {
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .modal {
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 60px 15px;
+    }
+
+    .bg-gray-800 {
+        padding: 15px;
+    }
+
+    button {
+        padding: 10px 18px;
+        font-size: 14px;
+    }
+}
